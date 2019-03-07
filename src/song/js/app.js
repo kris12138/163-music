@@ -134,9 +134,11 @@
             idTime=setInterval((e)=>{
                 $('.process>.process-num').css("width",obj.clientWidth /($('audio')[0].duration)*($('audio')[0].currentTime)+'px')
                 $('.process>.process-dot').css("left",obj.clientWidth /($('audio')[0].duration)*($('audio')[0].currentTime)+'px')
-                for(let i=0;i<lyric_time.length-1;i++){
+                for(let i=1;i<lyric_time.length-1;i++){
+                    // console.log(lyric_time[i],0)
                     if(((lyric_time[i][0])<($('audio')[0].currentTime))&((lyric_time[i+1][0])>($('audio')[0].currentTime))){
                         var td = $(".lyric>p:first")
+                        // console.log(lyric_time[i],1)
                         td.text(lyric_time[i-1][1])
                         var td = $(".lyric>p:nth-child(2)")
                         td.text(lyric_time[i][1])
