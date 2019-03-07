@@ -67,7 +67,7 @@ body{
 }
 .voice{
     position: absolute;
-    top: 75%;
+    top: 50%;
     left: 15%;
     margin: 10px 0;
     width: 80%;
@@ -130,6 +130,7 @@ body{
     border-radius: 50%;
     animation: rotate 8s linear infinite;
     animation-play-state: paused;
+    margin-top: -25px;
 }
 .banner>img{
     
@@ -148,26 +149,28 @@ body{
     text-align: center;
     animation: linear 1s;
     color:#555;
-    padding-bottom: 50px;
+    margin-bottom: 50px;
 }
 .lyric>p:nth-child(2){
     color: black;
-    margin: 20px;
+    margin: 10px;
 }
 .play{
     /* width: 780px; */
     /* margin-top: 10px; */
     /* margin-bottom: 30px; */
     width: 100%;
-    margin: 30px auto;
+    margin: -38px auto;
+ 
 
 }
 
 .play>ul{
     margin:0 auto;
     text-align: center;
-    margin-top: 30px;
+    margin-top: 10px;
     padding-bottom: 30px;
+    margin-bottom: 20px;
 
 }
 .play>ul>li{

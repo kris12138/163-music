@@ -102,8 +102,12 @@
                time=parseInt(time[0])*60+parseFloat(time[1])
                content=lyric[key].split(']')[1]
                if(content){
-                lyric_time.push([time,content])
+                   if(content[0]!='['){
+                    lyric_time.push([time,content])
+                   }
+                
                }
+            
                
            }
            var td = $(".lyric>p:first")
@@ -117,18 +121,11 @@
            $('.process').mouseup(function(e){
 
             var obj=document.getElementsByClassName("process")[0]
-            var left = obj.offsetLeft; //对应父容器的上边距 
-            //判断是否有父容器，如果存在则累加其边距 
-            while (obj = obj.offsetParent) {//等效 obj = obj.offsetParent;while (obj != undefined) 
-             //    t += obj.offsetTop; //叠加父容器的上边距 
-             left += obj.offsetLeft; //叠加父容器的左边距 
-            } 
-            var obj=document.getElementsByClassName("process")[0]
-         
-            $('audio')[0].currentTime=(e.pageX-left)*$('audio')[0].duration/obj.clientWidth 
-            $('.process>.process-num').css("width",(e.pageX-left)/obj.clientWidth +'px')
-            $('.process>.process-dot').css("left",(e.pageX-left)/obj.clientWidth +'px')
-
+            var width=obj.clientWidth 
+            var left = obj.offsetLeft; 
+     
+            $('audio')[0].currentTime=(e.pageX-left)*$('audio')[0].duration/width
+        
           });
          //   设置播放歌词
            $('audio').on('play',(e)=>{
@@ -137,7 +134,6 @@
             idTime=setInterval((e)=>{
                 $('.process>.process-num').css("width",obj.clientWidth /($('audio')[0].duration)*($('audio')[0].currentTime)+'px')
                 $('.process>.process-dot').css("left",obj.clientWidth /($('audio')[0].duration)*($('audio')[0].currentTime)+'px')
-
                 for(let i=0;i<lyric_time.length-1;i++){
                     if(((lyric_time[i][0])<($('audio')[0].currentTime))&((lyric_time[i+1][0])>($('audio')[0].currentTime))){
                         var td = $(".lyric>p:first")
