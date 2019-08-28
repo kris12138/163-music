@@ -25,7 +25,7 @@
             value.id = search.split('=')[1].split('&')[0]
             value.name = decodeURI(search.split('=')[2].split('&')[0])
             value.singer = decodeURI(search.split('=')[3].split('&')[0])
-            value.url = search.split('&')[3].replace('url=', '').replace('http', 'https')
+            value.url = search.split('&')[3].replace('url=', '')
             $.ajax({
                 url: 'https://jirenguapi.applinzi.com/fm/getLyric.php',
                 type: "post",
