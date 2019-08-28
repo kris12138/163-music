@@ -4,7 +4,7 @@
         render(data) {
             $('.wapper>.nav>.content>.name').text(data.name)
             $('.wapper>.nav>.content>.singer').text(data.singer)
-            $('.wapper>.play>audio').attr("src", data.url.replace('http','https'));
+            $('.wapper>.play>audio').attr("src", data.url.replace('http://','https://'));
         }
     }
     let model = {
