@@ -59,16 +59,13 @@
                 }
             })
             // 设置音量
-            $('.voice').mouseup(function (e) {
+            $('.voice-num').mouseup(function (e) {
                 var obj = document.getElementsByClassName("voice-num")[0]
                 var left = obj.offsetLeft;
-
                 while (obj = obj.offsetParent) {
                     left += obj.offsetLeft;
                 }
-
                 var obj = document.getElementsByClassName("voice-num")[0]
-
                 $('.voice>.voice-num>.voice>.dot').css("left", e.pageX - left + 'px')
                 $('.voice>.voice-num>.voice').css("width", e.pageX - left + 'px')
                 $('audio')[0].volume = (e.pageX - left) / obj.clientWidth

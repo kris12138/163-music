@@ -24,7 +24,7 @@ a{
     border: 1px solid transparent;
     border-left-color: #999;
     border-right-color: #999;
-    /* width: 800px; */
+    width: 600px;
     margin: 0 auto;
     background-color:  #999;
     height: 100vh;
@@ -53,7 +53,7 @@ a{
     color:rgb(194, 187, 187);
     font-size: 15px;
     bottom: 20%;
-    left: 15%;
+    left: 8%;
 }
 .new-song-list>ul>li>#hot{
     margin-top: 2px;

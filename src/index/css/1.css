@@ -25,7 +25,8 @@ a{
     overflow: hidden;
  }
 .nav{
-    /* width: 750px; */
+    width: 623px;
+    margin: 0 auto;
     background-color: #DF0001;
     position: relative;
     
@@ -58,6 +59,7 @@ a{
 
 
 .page-1{
+    width: 600px;
     display: none;
     padding: 0 10px;
     border: 1px solid transparent;
